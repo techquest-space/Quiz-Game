@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ionic -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Quiz Game</title>
 </head>
-<body>
-    
+
+<body class="font-[poppins] bg-gradient-to-t from-purple-200 to-blue-300 h-screen">
+    <header class="bg-white">
+        <nav class="flex justify-between items-center w-[92%] mx-auto py-4">
+            <div>
+                <h1 class="font-bold text-2xl">
+                    <a href="">Quiz-Game</a>
+                </h1>
+            </div>
+            <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[5vw] gap-10 font-semibold">
+                    <li>
+                        <a class="hover:text-gray-500" href="#">make quiz</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">About</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-6">
+                <button class="bg-white text-black px-5 py-2 rounded-full hover:bg-blue-200 border-2 border-blue-200">
+                    Join game
+                </button>
+                <div
+                    class="bg-white text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
+                    <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon">
+                    <label for="language" class="sr-only">Select language</label>
+                    <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language" id="language"
+                        class="bg-transparent appearance-none cursor-pointer outline-none">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
+    </header>
+
+
+    <script>
+        const navLink = document.querySelector('.nav-links')
+        function onToggleMenu(e) {
+        e.name = e.name === 'menu' ? 'close' : 'menu'
+        navLink.classList.toggle('top-[8%]')
+        }
+    </script>
 </body>
+
 </html>
