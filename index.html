@@ -2,126 +2,144 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- ionic -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
     <title>Quiz Game</title>
 </head>
 
 <body class="font-[poppins] bg-white">
-    <section class=" bg-gradient-to-b from-green-200 to-blue-300 h-[60vh]">
-        <header class="bg-gray-100">
-            <nav class="flex justify-between items-center w-[92%] mx-auto py-4">
-                <div>
-                    <h1 class="font-bold text-2xl">
-                        <a href="/index.html">Quiz-Game</a>
-                    </h1>
-                </div>
+    <header class="bg-gray-100">
+        <nav class="flex justify-between items-center w-[92%] mx-auto py-4">
+            <div>
+                <h1 class="font-bold text-2xl">
+                    <a href="/index.html">Quiz-Game</a>
+                </h1>
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5">
+                <ul
+                    class="flex md:flex-row flex-col md:items-center md:justify-items-end md:gap-[5vw] gap-10 font-semibold">
+                    <li>
+                        <a class="hover:text-gray-500" href="/make quiz.html">make quiz</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="/about.html">About</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="/signup.html">Signup</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="/login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center gap-6">
+                <button type="submit" id="" onclick="window.location.href='quiz.html'"
+                    class="bg-gray-100 text-black px-5 py-2 rounded-full hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
+                    Enter pin
+                </button>
                 <div
-                    class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5">
-                    <ul class="flex md:flex-row flex-col md:items-center md:justify-items-end  md:gap-[5vw] gap-10 font-semibold">
-                        <li>
-                            <a class="hover:text-gray-500" href="/make quiz.html">make quiz</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/about.html">About</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/signup.html">Signup</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/login.html">Login</a>
-                        </li>
-                    </ul>
+                    class="bg-gray-100 text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
+                    <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon" />
+                    <label for="language" class="sr-only">Select language</label>
+                    <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language"
+                        id="language" class="bg-transparent appearance-none cursor-pointer outline-none">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
                 </div>
-                <div class="flex items-center gap-6">
-                    <button id="submit" onclick="window.location.href='quiz.html'"
-                        class="bg-gray-100 text-black px-5 py-2 rounded-full hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
-                        Enter pin
-                    </button>
-                    <div
-                        class="bg-gray-100 text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
-                        <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon">
-                        <label for="language" class="sr-only">Select language</label>
-                        <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language"
-                            id="language" class="bg-transparent appearance-none cursor-pointer outline-none">
-                            <option value="en">EN</option>
-                            <option value="es">ES</option>
-                            <option value="fr">FR</option>
-                        </select>
-                    </div>
-                    <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
-                        class="text-3xl cursor-pointer md:hidden"></ion-icon>
-                </div>
-            </nav>
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
+    </header>
 
-        </header>
-    </section>
-
-    <section class=" md:flex h-auto p-32 justify-around px-60">
+    <main class="min-h-[60vh] bg-gray-200 pb-20">
         <div
-            class="bg-white border-2 border-black-100 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 text-center">
-            <!-- ... -->
-            <h3 class="text-gray-500 dark:text-gray-500 pt-20">Writes upside-down</h3>
-            <p class="text-gray-500 dark:text-gray-500">
-                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
-                outer
-                space.
+            class="flex flex-col items-center justify-center h-full text-center px-5 bg-gradient-to-b from-green-200 to-blue-300 min-h-[62vh]">
+            <h2 class="text-4xl font-bold mb-4 text-gray-700">
+                Welcome to Quiz-Game
+            </h2>
+            <p class="text-lg text-gray-600 mb-6">
+                Test your knowledge and challenge your friends!
             </p>
+            <button type="submit" id="" onclick="window.location.href='quiz.html'"
+                class="bg-gray-100 text-black px-10 py-3 rounded-lg hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
+                Get Started
+            </button>
         </div>
-        <div
-            class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 text-center">
-            <!-- ... -->
-            <h3 class="text-gray-500 dark:text-gray-500 pt-20">Writes upside-down</h3>
-            <p class="text-gray-500 dark:text-gray-500">
-                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
-                outer
-                space.
-            </p>
+
+        <div class="flex md:flex-row flex-col h-auto p-32 md:justify-around px-60">
+            <div
+                class="bg-white border-2 border-black-100 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
+                <!-- ... -->
+                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
+                    Writes upside-down
+                </h3>
+                <p class="text-gray-500 dark:text-gray-500">
+                    The Zero Gravity Pen can be used to write in any orientation,
+                    including upside-down. It even works in outer space.
+                </p>
+            </div>
+            <div
+                class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
+                <!-- ... -->
+                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
+                    Writes upside-down
+                </h3>
+                <p class="text-gray-500 dark:text-gray-500">
+                    The Zero Gravity Pen can be used to write in any orientation,
+                    including upside-down. It even works in outer space.
+                </p>
+            </div>
+            <div
+                class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
+                <!-- ... -->
+                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
+                    Writes upside-down
+                </h3>
+                <p class="text-gray-500 dark:text-gray-500">
+                    The Zero Gravity Pen can be used to write in any orientation,
+                    including upside-down. It even works in outer space.
+                </p>
+            </div>
         </div>
-        <div
-            class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 text-center">
-            <!-- ... -->
-            <h3 class="text-gray-500 dark:text-gray-500 pt-20">Writes upside-down</h3>
-            <p class="text-gray-500 dark:text-gray-500">
-                The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in
-                outer
-                space.
-            </p>
+    </main>
+
+    <footer class="bg-[#333337] min-h-[30vh]">
+        <div align="center">
+            <img class="inline w-40" src="/Images/accreditation1.avif" alt="accredited">
+            <img class="inline w-40" src="/Images/accreditation2.avif" alt="">
+            <img class="inline w-40" src="/Images/accreditation3.avif" alt="">
         </div>
-    </section>
 
-
-    <section class="bg-[#333337] h-[30vh]">
-        <footer class="">
-        </footer>
-    </section>
-
-
+        <div>
+            <h4 class="text-center text-gray-300 m-10 items-end">
+                create your own quiz game for free at
+                <a href="/index.html" class="underline">quizgame.com</a>
+            </h4>
+        </div>
+    </footer>
 
 
 </body>
 
-
-
-
-
-
-
 <script>
-    const navLink = document.querySelector('.nav-links')
+    const navLink = document.querySelector(".nav-links");
     function onToggleMenu(e) {
-        e.name = e.name === 'menu' ? 'close' : 'menu'
-        navLink.classList.toggle('top-[8%]')
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLink.classList.toggle("top-[8%]");
     }
 </script>
 

@@ -17,53 +17,60 @@
     <title>Quiz Game</title>
 </head>
 
-<body class="font-[poppins] bg-white">
-    <section class=" bg-gradient-to-b from-green-200 to-blue-300 h-[60vh]">
-        <header class="bg-gray-100">
-            <nav class="flex justify-between items-center w-[92%] mx-auto py-4">
-                <div>
-                    <h1 class="font-bold text-2xl">
-                        <a href="/index.html">Quiz-Game</a>
-                    </h1>
-                </div>
+<body class="font-[poppins] bg-gradient-to-b from-green-200 to-blue-300 h-screen">
+    <header class="">
+        <nav class="justify-items-end items-center w-[96%] mx-auto py-4">
+            <div class="flex items-center gap-6">
                 <div
-                    class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5">
-                    <ul
-                        class="flex md:flex-row flex-col md:items-center md:justify-items-end  md:gap-[5vw] gap-10 font-semibold">
-                        <li>
-                            <a class="hover:text-gray-500" href="/make quiz.html">make quiz</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/about.html">About</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/signup.html">Signup</a>
-                        </li>
-                        <li>
-                            <a class="hover:text-gray-500" href="/login.html">Login</a>
-                        </li>
-                    </ul>
+                    class="bg-gray-100 text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
+                    <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon">
+                    <label for="language" class="sr-only">Select language</label>
+                    <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language"
+                        id="language" class="bg-transparent appearance-none cursor-pointer outline-none">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="fr">FR</option>
+                    </select>
                 </div>
-                <div class="flex items-center gap-6">
-                    <button id="submit" onclick="window.location.href='quiz.html'"
-                        class="bg-gray-100 text-black px-5 py-2 rounded-full hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
-                        Enter pin
-                    </button>
-                    <div
-                        class="bg-gray-100 text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
-                        <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon">
-                        <label for="language" class="sr-only">Select language</label>
-                        <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language"
-                            id="language" class="bg-transparent appearance-none cursor-pointer outline-none">
-                            <option value="en">EN</option>
-                            <option value="es">ES</option>
-                            <option value="fr">FR</option>
-                        </select>
-                    </div>
-                    <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
-                        class="text-3xl cursor-pointer md:hidden"></ion-icon>
-                </div>
-            </nav>
+                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
+                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+        </nav>
+    </header>
 
-        </header>
-    </section>
+    <main class="flex flex-col items-center justify-center border border-transparent min-h-[82vh] mt-20">
+        <div class="bg-white h-auto w-auto px-3 focus:border-sky-500 pb-3 rounded-md text-center">
+            <input class="bg-transparent text-center text-lg min-h-[10vh] shadow-lg shadow-cyan-500/30 focus:outline focus:outline-sky-500 font-bold" type="text" placeholder="Enter Pin">
+        
+        
+        <div class="items-center justify-center mt-5 ">
+            <button type="submit" id="" onclick="window.location.href='quiz.html'"
+                class="bg-gray-100 text-black px-40 py-5 rounded-lg hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200 font-semibold">
+                Login
+            </button>
+        </div> </div>
+    </main>
+
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyD12gvFFLFmi2rS0Uu5NMuGz0c9lA1TNJc",
+        authDomain: "quiz-game-527f5.firebaseapp.com",
+        projectId: "quiz-game-527f5",
+        storageBucket: "quiz-game-527f5.firebasestorage.app",
+        messagingSenderId: "686598817035",
+        appId: "1:686598817035:web:cf486fca3e758ecf4d8e0e"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+</script>
+
+</html>
