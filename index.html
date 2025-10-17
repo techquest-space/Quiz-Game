@@ -19,105 +19,108 @@
 
 <body class="font-[poppins] bg-white">
     <header class="bg-gray-100">
-        <nav class="flex justify-between items-center w-[92%] mx-auto py-4">
-            <div>
-                <h1 class="font-bold text-2xl">
-                    <a href="/index.html">Quiz-Game</a>
-                </h1>
-            </div>
-            <div
-                class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5">
-                <ul
-                    class="flex md:flex-row flex-col md:items-center md:justify-items-end md:gap-[5vw] gap-10 font-semibold">
-                    <li>
-                        <a class="hover:text-gray-500" href="/make quiz.html">make quiz</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="/about.html">About</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="/signup.html">Signup</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-500" href="/login.html">Login</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="flex items-center gap-6">
-                <button type="submit" id="" onclick="window.location.href='quiz.html'"
-                    class="bg-gray-100 text-black px-5 py-2 rounded-full hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
-                    Enter pin
-                </button>
-                <div
-                    class="bg-gray-100 text-black px-4 py-2 rounded-full border-2 border-blue-200 flex items-center gap-2 hover:bg-gray-50">
-                    <img class="w-6 h-4" src="/Images/globe.png" alt="Globe icon" />
-                    <label for="language" class="sr-only">Select language</label>
-                    <select class="bg-transparent appearance-none cursor-pointer outline-none" name="language"
-                        id="language" class="bg-transparent appearance-none cursor-pointer outline-none">
-                        <option value="en">EN</option>
-                        <option value="es">ES</option>
-                        <option value="fr">FR</option>
-                    </select>
+        <nav class="bg-white fixed w-full z-20 top-0 start-0">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <span class="self-center text-2xl font-semibold dark:text-gray-700">Quiz-Game</span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <button type="button" onclick="window.location.href='quiz.html'"
+                        class="font-medium rounded-lg text-sm px-4 py-2 text-center dark:focus:ring-blue-800 bg-gray-100 text-black px-10 py-3 rounded-lg hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">Join game</button>
+                    <!-- <button data-collapse-toggle="navbar-sticky" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button> -->
                 </div>
-                <ion-icon onclick="onToggleMenu(this)" name="menu-outline"
-                    class="text-3xl cursor-pointer md:hidden"></ion-icon>
+                <div class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <!-- <div class="nav-links duration-500 md:static absolute md:min-h-fit min-h-[30vh] left-0 top-[100%] md:w-auto w-full flex items-center px-5 items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky"></div> -->
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0">
+                        <li>
+                            <a href="/make quiz.html"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-gray-500 dark:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-200 md:dark:hover:bg-transparent dark:border-gray-700"
+                                aria-current="page">Make quiz</a>
+                        </li>
+                        <li>
+                            <a href="/about.html"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-gray-500 dark:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-200 md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                        </li>
+                        <li>
+                            <a href="/signup.html"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-gray-500 dark:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-gray-200 md:dark:hover:bg-transparent dark:border-gray-700">Signup</a>
+                        </li>
+                        <li>
+                            <a href="/login.html"
+                                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700 md:p-0 md:dark:hover:text-gray-500 dark:text-gray-700 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <ion-icon onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon> -->
             </div>
         </nav>
+
     </header>
 
     <main class="min-h-[60vh] bg-gray-200 pb-20">
         <div
-            class="flex flex-col items-center justify-center h-full text-center px-5 bg-gradient-to-b from-green-200 to-blue-300 min-h-[62vh]">
+            class="flex flex-col items-center justify-center h-full text-center px-5 bg-gradient-to-b from-green-200 to-blue-300 min-h-[62vh] ">
             <h2 class="text-4xl font-bold mb-4 text-gray-700">
                 Welcome to Quiz-Game
             </h2>
             <p class="text-lg text-gray-600 mb-6">
                 Test your knowledge and challenge your friends!
             </p>
-            <button type="submit" id="" onclick="window.location.href='quiz.html'"
+            <button type="submit" id="" onclick="window.location.href='signup.html'"
                 class="bg-gray-100 text-black px-10 py-3 rounded-lg hover:bg-gradient-to-b from-green-200 to-blue-300 border-2 border-blue-200">
                 Get Started
             </button>
         </div>
 
-        <div class="flex md:flex-row flex-col h-auto p-32 md:justify-around px-60">
-            <div
-                class="bg-white border-2 border-black-100 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
-                <!-- ... -->
-                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
-                    Writes upside-down
-                </h3>
-                <p class="text-gray-500 dark:text-gray-500">
-                    The Zero Gravity Pen can be used to write in any orientation,
-                    including upside-down. It even works in outer space.
-                </p>
-            </div>
-            <div
-                class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
-                <!-- ... -->
-                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
-                    Writes upside-down
-                </h3>
-                <p class="text-gray-500 dark:text-gray-500">
-                    The Zero Gravity Pen can be used to write in any orientation,
-                    including upside-down. It even works in outer space.
-                </p>
-            </div>
-            <div
-                class="bg-white border-2 rounded-3xl hover:bg-gradient-to-b from-green-200 to-blue-300 h-[40vh] w-80 md:text-center">
-                <!-- ... -->
-                <h3 class="text-gray-500 dark:text-gray-500 pt-20">
-                    Writes upside-down
-                </h3>
-                <p class="text-gray-500 dark:text-gray-500">
-                    The Zero Gravity Pen can be used to write in any orientation,
-                    including upside-down. It even works in outer space.
-                </p>
-            </div>
-        </div>
+        
+
+
     </main>
 
-    <footer class="bg-[#333337] min-h-[30vh]">
+    <footer class="dark:bg-gray-800 min-h-[30vh] w-full p-4 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8dark:border-gray-700">
+                <div class="pb-20">
+                    <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">Work fast from anywhere</h5>
+                    <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Stay up to date and move work forward with
+                        Flowbite on iOS & Android. Download the app today.</p>
+                    <div class="items-center justify-center space-y-4 sm:flex sm:space-y-0 sm:space-x-4 rtl:space-x-reverse">
+                        <a href="#"
+                            class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                            <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple"
+                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                <path fill="currentColor"
+                                    d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z">
+                                </path>
+                            </svg>
+                            <div class="text-left rtl:text-right">
+                                <div class="mb-1 text-xs">Download on the</div>
+                                <div class="-mt-1 font-sans text-sm font-semibold">Mac App Store</div>
+                            </div>
+                        </a>
+                        <a href="#"
+                            class="w-full sm:w-auto bg-gray-800 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 text-white rounded-lg inline-flex items-center justify-center px-4 py-2.5 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700">
+                            <svg class="me-3 w-7 h-7" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-play"
+                                role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path fill="currentColor"
+                                    d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                                </path>
+                            </svg>
+                            <div class="text-left rtl:text-right">
+                                <div class="mb-1 text-xs">Get in on</div>
+                                <div class="-mt-1 font-sans text-sm font-semibold">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
         <div align="center">
             <img class="inline w-40" src="/Images/accreditation1.avif" alt="accredited">
             <img class="inline w-40" src="/Images/accreditation2.avif" alt="">
@@ -138,7 +141,7 @@
 <script>
     const navLink = document.querySelector(".nav-links");
     function onToggleMenu(e) {
-        e.name = e.name === "menu" ? "close" : "menu";
+        e.name = e.name === "close" ? "menu" : "close";
         navLink.classList.toggle("top-[8%]");
     }
 </script>
